@@ -13,7 +13,7 @@ public class Lista {
 		}
 		if(lista[posicao] != null){
 			for(int i = lista.length - 1; i > posicao; i--){
-				lista[i] = lista[i- 1];
+				lista[i] = lista[i- 1]; 
 			}
 		}
 		lista[posicao] = valor;
