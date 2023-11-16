@@ -1,34 +1,43 @@
 package Pilha;
 
 public class Pilha {
-	public int tamanho;
-	
-	public void Pilha() {
-		tamanho ++;
-	}
-	
-	public String top() {
-		return null;
-//	Retornar o elemento no topo mas não o remove
-	}
-	
-	public boolean isEmpty() {
-		return true;
-//		Retorna se a lista está vazia ou nãos
-	}
-	
+	private int tamanho;
+	private String[] vetor = new String[5];
+
 	public void push(String elemento) {
 		this.vetor[tamanho++] = elemento;
-// Adiciona o elemento no final da pilha
 	}
 
-	public String pop(){
-		return null;
-
+	public void top() {
+		if(vetor[0] == null) {
+			System.out.println("Lista Vazia");
+		}else {
+			System.out.println(vetor[tamanho-1]);
+		}
 	}
-	
-	public int size() {
-		return tamanho;
-//		Retorna o tamanho da lista
+
+	public void PilhaCompleta() {
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.println(vetor[i]);
+		}
+	}
+	public void isEmpty() {
+		if (vetor[0] == null) {
+			System.out.println(true);
+		}
+		else {
+			System.out.println(false);
+		}
+	}
+
+	public void pop(){
+		System.out.println(vetor[tamanho-1]); 
+		vetor[tamanho-1] = null;
+		tamanho--;
+	}
+
+	public void size() {
+		System.out.println(tamanho);
+		//		Retorna o tamanho da lista
 	}
 }
