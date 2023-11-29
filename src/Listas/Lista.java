@@ -7,7 +7,7 @@ public class Lista {
 	String[] lista = new String[5];
 
 	public void add(int posicao, String valor){
-		if(posicao > lista.length) {
+		if(posicao > lista.length || posicao < 0) {
 			System.out.println("Posição Invalida");
 			return;
 		}

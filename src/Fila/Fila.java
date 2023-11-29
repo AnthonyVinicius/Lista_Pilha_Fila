@@ -21,11 +21,11 @@ public class Fila {
 		if(f == fila.length) {
 			f = 0;
 		}
-		// Remove o primeiro elemento da fila
+		// Remove o primeiro elemento da fila e retorna
 	}
 
 	public void front() {
-		System.out.println(fila[f+1]);		
+		System.out.println(fila[f]);		
 		//				Retorna o proximo elemento mas não deleta
 	}
 
