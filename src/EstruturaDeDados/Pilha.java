@@ -1,4 +1,4 @@
-package Pilha;
+package EstruturaDeDados;
 
 public class Pilha {
 	private int tamanho;
@@ -21,12 +21,12 @@ public class Pilha {
 			System.out.println(vetor[i]);
 		}
 	}
-	public void isEmpty() {
+	public boolean isEmpty() {
 		if (vetor[0] == null) {
-			System.out.println(true);
+			return true;
 		}
 		else {
-			System.out.println(false);
+			return false;
 		}
 	}
 

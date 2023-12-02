@@ -1,4 +1,4 @@
-package Listas;
+package EstruturaDeDados;
 
 import java.util.Scanner;
 
@@ -27,8 +27,8 @@ public class Lista {
 		}
 	}
 
-	public void listaGet(int posicao) {
-		System.out.println("Valor presente na posição " + posicao + ": " + lista[posicao]);
+	public String listaGet(int posicao) {
+		return "Valor presente na posição " + posicao + ": " + lista[posicao];
 	}
 
 	public void showLista() {
