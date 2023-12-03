@@ -6,30 +6,42 @@ public class ListaEncadeada {
 	NoEncadeado primeiroNo;
 	NoEncadeado ultimoNo;
 
+	private NoEncadeado getNoAnterior(int index) {
+		if (index < 0 || index >= tamanho) {
+
+		}
+		else {
+			temp = primeiroNo;
+			for (int i = 0; i < index; i++) {
+				temp = temp.getProximoNo();
+			}
+		}
+
+		return temp;
+	}
+
 	public void add(String dado, int index) {
 		index--;
-		if (index < 0 ) {
-			System.out.println("Índice inválido");
+		if (index < 0 || index > tamanho) {
+			System.out.println("Índice inválido(add)");
+			return;
 		}
 
 		NoEncadeado novoNo = new NoEncadeado(dado);
 
 		if (index == 0) {
-//			novoNo.setProximoNo(primeiroNo);
-//			primeiroNo.setAnteriorNo(novoNo);
+
 			primeiroNo = novoNo;
 			ultimoNo = novoNo;
 
-		} else if (index == tamanho || index > tamanho) {
+		} else if (index == tamanho) {
 			ultimoNo.setProximoNo(novoNo);
 			novoNo.setAnteriorNo(ultimoNo);
 			ultimoNo = novoNo;
 
 		} else {
-			temp = primeiroNo;
-			for (int i = 0; i < index; i++) {
-				temp = temp.getProximoNo();
-			}
+			temp = getNoAnterior(index);
+
 			temp.getAnteriorNo().setProximoNo(novoNo);
 			novoNo.setProximoNo(temp);
 			novoNo.setAnteriorNo(temp.getAnteriorNo());
@@ -38,43 +50,48 @@ public class ListaEncadeada {
 
 		tamanho++;
 	}
-	
+
+
 	public void remove(int index) {
 		index--;
-		if (primeiroNo == null || tamanho <= 0) {
-			throw new NullPointerException("A lista está vazia");
-		}
+		if (index < 0 || index >= tamanho) {
+			System.out.println("Índice inválido (Remove)");
+		} else {
+			temp = getNoAnterior(index);
 
-		for (int i = 0; i < index; i++) {
-			temp = temp.getProximoNo();
-		}
-
-		if (index == 0) {
-			primeiroNo = temp.getProximoNo();
-			if (primeiroNo == null) {
-				ultimoNo = null;
-
+			if (index == 0) {
+				primeiroNo = temp.getProximoNo();
+				if (primeiroNo == null) {
+					ultimoNo = null;
+				} else {
+					primeiroNo.setAnteriorNo(null);
+				}
+			} else if (index == tamanho - 1) {
+				ultimoNo = temp.getAnteriorNo();
+				ultimoNo.setProximoNo(null);
 			} else {
-				primeiroNo.setAnteriorNo(null);
-
+				temp.getAnteriorNo().setProximoNo(temp.getProximoNo());
+				temp.getProximoNo().setAnteriorNo(temp.getAnteriorNo());
 			}
 
-		} else if (index == tamanho - 1) {
-			ultimoNo = temp.getAnteriorNo();
-			ultimoNo.setProximoNo(null);
-
-		} else {
-			temp.getAnteriorNo().setProximoNo(temp.getProximoNo());
-			temp.getProximoNo().setAnteriorNo(temp.getAnteriorNo());
+			tamanho--;
+		}
+	}
+	public String getElemento(int index) {
+		index --;
+		if (index < 0 || index >= tamanho) {
+			System.out.println("Índice inválido getElemento");
 		}
 
-		tamanho--;
+		temp = getNoAnterior(index);
+
+		return temp.getDados();
 	}
-	
+
 	public int size() {
 		return tamanho;
 	}
-	
+
 	public void showList() {
 		temp = primeiroNo;
 		while (temp != null) {

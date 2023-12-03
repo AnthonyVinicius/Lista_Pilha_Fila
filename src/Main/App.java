@@ -28,11 +28,11 @@ public class App {
 
 		listaEncadeada.add("João",1);
 		listaEncadeada.add("Thiago",2);
-		listaEncadeada.add("Marcos",3 );
-		listaEncadeada.add("Carlos",7);
-		listaEncadeada.add("Maria",4 );
-		listaEncadeada.add("Maria",2 );
-		listaEncadeada.remove(7);
+		listaEncadeada.add("Marcos",3);
+		listaEncadeada.add("Maria",4);
+		listaEncadeada.remove(4);
+		System.out.println("Tamanho da lista " + listaEncadeada.size());
+		System.out.println("Elemento: " + listaEncadeada.getElemento(3));
 		listaEncadeada.showList();
 
 /*
