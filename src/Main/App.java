@@ -23,14 +23,18 @@ public class App {
 		System.out.println(lista.listaGet(2));
 		lista.showLista();
 */		
-/*
+
 		ListaEncadeada listaEncadeada = new ListaEncadeada();
 
-		listaEncadeada.add("João");
-		listaEncadeada.add("Thiago");
-		listaEncadeada.add("Marcos");
-		listaEncadeada.print();
-*/
+		listaEncadeada.add("João",1);
+		listaEncadeada.add("Thiago",2);
+		listaEncadeada.add("Marcos",3 );
+		listaEncadeada.add("Carlos",7);
+		listaEncadeada.add("Maria",4 );
+		listaEncadeada.add("Maria",2 );
+		listaEncadeada.remove(7);
+		listaEncadeada.showList();
+
 /*
 		Fila fila = new Fila();
 		fila.enqueue("Joao");
