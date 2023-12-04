@@ -1,4 +1,4 @@
-package EstruturaDeDados;
+package estruturadedados;
 
 public class FilaEncadeada {
 

@@ -1,6 +1,6 @@
-package EstruturaDeDados;
+package estruturadedados;
 
-public class ListaEncadeada {
+public class ListaDuplamenteEncadeada {
 	int tamanho = 0;
 	NoEncadeado temp;
 	NoEncadeado primeiroNo;
@@ -77,6 +77,8 @@ public class ListaEncadeada {
 			tamanho--;
 		}
 	}
+
+
 	public String getElemento(int index) {
 		index --;
 		if (index < 0 || index >= tamanho) {
@@ -86,6 +88,15 @@ public class ListaEncadeada {
 		temp = getNoAnterior(index);
 
 		return temp.getDados();
+	}
+
+	public void set(int index, String entrada) {
+		index--;
+		if (index < 0 || index >= tamanho) {
+			System.out.println("Indice invalido");
+		}
+
+		getNoAnterior(index).setDados(entrada);
 	}
 
 	public int size() {

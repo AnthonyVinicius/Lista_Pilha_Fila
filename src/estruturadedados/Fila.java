@@ -1,4 +1,4 @@
-package EstruturaDeDados;
+package estruturadedados;
 
 public class Fila {
 	private String[] fila = new String[5];
@@ -12,7 +12,6 @@ public class Fila {
 		if(r == fila.length) {
 			r = 0;
 		}
-		// Insere o elemento no fim da fila
 	}
 
 	public String dequeue() {
@@ -23,12 +22,10 @@ public class Fila {
 			f = 0;
 		}
 		return temp;
-		// Remove o primeiro elemento da fila e retorna
 	}
 
 	public void front() {
 		System.out.println(fila[f]);		
-		//				Retorna o proximo elemento mas não deleta
 	}
 
 	public void size() {
@@ -43,6 +40,7 @@ public class Fila {
 			return false;
 		}
 	}
+	
 	public void filaCompleta() {
 		for (int i = 0; i < fila.length; i++) {
 			System.out.println(fila[i]);
