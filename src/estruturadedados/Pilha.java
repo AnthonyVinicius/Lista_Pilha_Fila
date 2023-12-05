@@ -8,17 +8,21 @@ public class Pilha {
 		this.vetor[tamanho++] = elemento;
 	}
 
-	public void top() {
+	public String top() {
 		if(vetor[0] == null) {
-			System.out.println("Lista Vazia");
+			return "Lista Vazia";
 		}else {
-			System.out.println(vetor[tamanho-1]);
+			return vetor[tamanho-1];
 		}
 	}
 
-	public void PilhaCompleta() {
+	public void showPilha() {
+
 		for (int i = 0; i < vetor.length; i++) {
-			System.out.println(vetor[i]);
+			if(vetor[i]!= null) {
+
+				System.out.println(vetor[i]);
+			}
 		}
 	}
 	public boolean isEmpty() {
@@ -30,14 +34,19 @@ public class Pilha {
 		}
 	}
 
-	public void pop(){
-		System.out.println(vetor[tamanho-1]); 
-		vetor[tamanho-1] = null;
-		tamanho--;
+	public String pop(){
+		if (tamanho <= 0) {
+			return "Não existem mais elementos";
+		}else{
+			String temp = vetor[tamanho-1]; 
+			vetor[tamanho-1] = null;
+			tamanho--;
+			return temp;
+		}
 	}
 
-	public void size() {
-		System.out.println(tamanho);
-		//		Retorna o tamanho da lista
+
+	public int size() {
+		return tamanho;
 	}
 }

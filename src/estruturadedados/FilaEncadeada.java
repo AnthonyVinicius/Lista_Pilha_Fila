@@ -21,12 +21,17 @@ public class FilaEncadeada {
 	}
 
 	public String dequeue() {
-		String tempDado = primeiro.getDados();
-		primeiro = primeiro.getProximoNo();
-		tamanho --;
-		return tempDado;
+		if (tamanho <= 0) {
+			return "Não existem mais elementos";
+		}else {
+			String tempDado = primeiro.getDados();
+			primeiro = primeiro.getProximoNo();
+			tamanho --;
+			return tempDado; 
+		}
 	}
-	
+
+
 	public String front() {
 		return primeiro.getDados();
 	}
@@ -49,7 +54,7 @@ public class FilaEncadeada {
 		for (int i = 0 ; i < tamanho ; i++) {
 			System.out.println(tempShowFila.getDados());
 			tempShowFila = tempShowFila.getProximoNo();
-			
+
 		}
 	}
 }

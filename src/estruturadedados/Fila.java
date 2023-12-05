@@ -21,15 +21,21 @@ public class Fila {
 		if(f == fila.length) {
 			f = 0;
 		}
+		if (tamanho <= 0) {
+			tamanho = 0;
+		}else {
+
+			tamanho--;
+		}
 		return temp;
 	}
 
-	public void front() {
-		System.out.println(fila[f]);		
+	public String front() {
+		return fila[f];		
 	}
 
-	public void size() {
-		System.out.println(tamanho);
+	public int size() {
+		return tamanho;
 	}
 
 	public boolean isEmpty() {
@@ -40,10 +46,12 @@ public class Fila {
 			return false;
 		}
 	}
-	
-	public void filaCompleta() {
+
+	public void showFila() {
 		for (int i = 0; i < fila.length; i++) {
-			System.out.println(fila[i]);
+			if (fila[i]!= null) {
+				System.out.println(fila[i]);				
+			}
 		}
 	}
 }

@@ -4,7 +4,7 @@ public class PilhaEncadeada {
 	int tamanho = 0;
 	NoEncadeado top;
 	NoEncadeado temp;
-	
+
 	public void push(String elemento) {
 		NoEncadeado novoNo = new NoEncadeado(elemento);
 
@@ -17,14 +17,22 @@ public class PilhaEncadeada {
 		tamanho++;
 	}
 	
-	public String pop() {
-		String temp = top.getDados();
-		top = top.getProximoNo();
-		tamanho --;
-		return temp;
+	public String top() {
+		return top.getDados();
 	}
-	
-	
+
+	public String pop() {
+		if (tamanho <= 0) {
+			return "Não existem mais elementos";
+		}else{
+			String temp = top.getDados();
+			top = top.getProximoNo();
+			tamanho --;
+			return temp;
+		}
+	}
+
+
 	public boolean isEmpty() {
 		if (tamanho == 0) {
 			return true;
@@ -32,12 +40,12 @@ public class PilhaEncadeada {
 			return false;
 		}
 	}
-	
+
 	public int size() {
 		return tamanho;
 	}
-	
-	public void showLista() {
+
+	public void showPilha() {
 		temp = top;
 		for (int i = 0; i < tamanho;i++) {
 			System.out.println(temp.getDados());
@@ -45,8 +53,8 @@ public class PilhaEncadeada {
 			top = temp;
 		}
 	}
-	
-	
+
+
 }
 
 
