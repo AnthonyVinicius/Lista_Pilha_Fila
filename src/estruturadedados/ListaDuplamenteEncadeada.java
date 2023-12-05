@@ -37,6 +37,7 @@ public class ListaDuplamenteEncadeada {
 			}
 			else {
 				novoNo.setProximoNo(primeiroNo);
+				primeiroNo.setProximoNo(novoNo);
 				primeiroNo = novoNo;
 				System.out.println("2");
 			}
