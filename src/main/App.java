@@ -9,7 +9,7 @@ import estruturadedados.PilhaEncadeada;
 
 public class App {
 	public static void main(String[] args) {
-
+/*
 		Lista lista = new Lista();
 
 		lista.add(1, "Gabriel");
@@ -17,25 +17,25 @@ public class App {
 		lista.add(2, "Julio");
 		lista.add(3, "Joel");
 		lista.add(5, "Jananina");
-//		lista.add(3, "Julio");
-//		lista.add(7, "Julio");
+		lista.add(3, "Julio");
+		lista.add(7, "Julio");
 		lista.showLista();
 		lista.remove(2);
-//		System.out.println(lista.listaGet(2));
+		System.out.println(lista.listaGet(2));9
 		lista.showLista();
-	
-/*
+*/	
+
 		ListaDuplamenteEncadeada listaDuplamenteEncadeada = new ListaDuplamenteEncadeada();
 
-		listaDuplamenteEncadeada.add("João",1);
-		listaDuplamenteEncadeada.add("Thiago",2);
-		listaDuplamenteEncadeada.add("Marcos",3);
-		listaDuplamenteEncadeada.add("Maria",4);
-		listaDuplamenteEncadeada.remove(4);
-		System.out.println("Tamanho da lista " + listaDuplamenteEncadeada.size());
-		System.out.println("Elemento: " + listaDuplamenteEncadeada.getElemento(3));
-		listaDuplamenteEncadeada.showList();
-*\
+		listaDuplamenteEncadeada.add(1,"Joao");
+		listaDuplamenteEncadeada.add(2,"Marcos");
+		listaDuplamenteEncadeada.add(3,"Carlos");
+		listaDuplamenteEncadeada.add(1,"Zoe");
+//		listaDuplamenteEncadeada.remove(4);
+//		System.out.println("Tamanho da lista " + listaDuplamenteEncadeada.size());
+//		System.out.println("Elemento: " + listaDuplamenteEncadeada.getElemento(3));
+		listaDuplamenteEncadeada.showLista();
+
 /*
 		Fila fila = new Fila();
 		fila.enqueue("Joao");

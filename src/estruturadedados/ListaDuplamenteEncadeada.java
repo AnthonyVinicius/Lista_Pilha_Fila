@@ -20,7 +20,7 @@ public class ListaDuplamenteEncadeada {
 		return temp;
 	}
 
-	public void add(String dado, int index) {
+	public void add(int index, String dado) {
 		index--;
 		if (index < 0 || index > tamanho) {
 			System.out.println("Índice inválido(add)");
@@ -30,14 +30,21 @@ public class ListaDuplamenteEncadeada {
 		NoEncadeado novoNo = new NoEncadeado(dado);
 
 		if (index == 0) {
-
-			primeiroNo = novoNo;
-			ultimoNo = novoNo;
-
+			if(tamanho == 0){
+				primeiroNo = novoNo;
+				ultimoNo = primeiroNo;
+				System.out.println("1");
+			}
+			else {
+				novoNo.setProximoNo(primeiroNo);
+				primeiroNo = novoNo;
+				System.out.println("2");
+			}
 		} else if (index == tamanho) {
 			ultimoNo.setProximoNo(novoNo);
 			novoNo.setAnteriorNo(ultimoNo);
 			ultimoNo = novoNo;
+			System.out.println("3");
 
 		} else {
 			temp = getNoAnterior(index);
@@ -46,6 +53,7 @@ public class ListaDuplamenteEncadeada {
 			novoNo.setProximoNo(temp);
 			novoNo.setAnteriorNo(temp.getAnteriorNo());
 			temp.setAnteriorNo(novoNo);
+			System.out.println("4");
 		}
 
 		tamanho++;
@@ -103,14 +111,13 @@ public class ListaDuplamenteEncadeada {
 		return tamanho;
 	}
 
-	public void showList() {
+	public void showLista() {
 		temp = primeiroNo;
-		while (temp != null) {
-			System.out.print(temp.getDados() + "; ");
+		for (int i = 0; i < tamanho;i++) {
+			System.out.println(temp.getDados());
 			temp = temp.getProximoNo();
 		}
 
-		System.out.println();
 	}
 
 }

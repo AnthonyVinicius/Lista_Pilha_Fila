@@ -5,9 +5,8 @@ public class NoEncadeado {
 	private NoEncadeado proximoNo;
 	private NoEncadeado anteriorNo;
 
-	public NoEncadeado() {
-		// TODO Auto-generated constructor stub
-	}
+//	public NoEncadeado() {
+//	}
 
 	public NoEncadeado(String dados) {
 		super();
