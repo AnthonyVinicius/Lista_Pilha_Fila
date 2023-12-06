@@ -23,7 +23,6 @@ public class AppFila {
 					+ "\n___________________________");
 
 			String entrada = scanner.nextLine();
-
 			switch(entrada){
 
 			case ("1"):{
@@ -82,6 +81,9 @@ public class AppFila {
 				break;
 			}
 			}
+
 		}
+
 	}
 }
+

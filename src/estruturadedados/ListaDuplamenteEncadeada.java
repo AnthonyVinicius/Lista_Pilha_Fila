@@ -33,19 +33,16 @@ public class ListaDuplamenteEncadeada {
 			if(tamanho == 0){
 				primeiroNo = novoNo;
 				ultimoNo = primeiroNo;
-				System.out.println("1");
 			}
 			else {
 				novoNo.setProximoNo(primeiroNo);
-				primeiroNo.setProximoNo(novoNo);
+				primeiroNo.setAnteriorNo(novoNo);
 				primeiroNo = novoNo;
-				System.out.println("2");
 			}
 		} else if (index == tamanho) {
 			ultimoNo.setProximoNo(novoNo);
 			novoNo.setAnteriorNo(ultimoNo);
 			ultimoNo = novoNo;
-			System.out.println("3");
 
 		} else {
 			temp = getNoAnterior(index);

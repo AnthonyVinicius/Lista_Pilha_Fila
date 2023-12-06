@@ -24,77 +24,83 @@ public class AppListaDuplamenteEncadeada {
 
 			String entrada = scanner.nextLine();
 
-			switch(entrada){
+			try {
+				switch(entrada){
 
-			case ("1"):{
-				continuar = true;
-				while(continuar) {
+				case ("1"):{
+					continuar = true;
+
+					while(continuar) {
+						System.out.print("Digite a Posição desejada: ");
+						int index = Integer.parseInt(scanner.nextLine());
+
+						System.out.print("Digite o Elemento desejado: ");
+						String elemento  = scanner.nextLine();
+						listaDuplamenteEncadeada.add(index, elemento);
+						System.out.println("Deseja adicionar mais um elemento?[S] or [N]");
+						String resposta = scanner.nextLine();
+						if(resposta.equalsIgnoreCase("n")) {
+							continuar = false;
+						}
+					}
+					break;
+
+				}
+				case ("2"):{
+					continuar = true;
+					while(continuar) {
+						System.out.print("Digite a Posição que você deseja remover: ");
+						int posicao =Integer.parseInt(scanner.nextLine());
+						listaDuplamenteEncadeada.remove(posicao);
+						System.out.println("Deseja Remover mais um elemento?[S] or [N]");
+						String resposta = scanner.nextLine();
+						if(resposta.equalsIgnoreCase("n")) {
+							continuar = false;
+						} 
+					}
+					break;
+				}
+
+				case("3"):{
+
 					System.out.print("Digite a Posição desejada: ");
 					int index = Integer.parseInt(scanner.nextLine());
 
 					System.out.print("Digite o Elemento desejado: ");
 					String elemento  = scanner.nextLine();
-					listaDuplamenteEncadeada.add(index, elemento);
-					System.out.println("Deseja adicionar mais um elemento?[S] or [N]");
-					String resposta = scanner.nextLine();
-					if(resposta.equalsIgnoreCase("n")) {
-						continuar = false;
-					}
+					listaDuplamenteEncadeada.set(index, elemento);
+					break;
+
+				}case("4"):{
+					System.out.println("Tamanho da lista: " + listaDuplamenteEncadeada.size());
+					break;
+
+
+				} case("5"):{
+
+					System.out.print("Digite a Posição que deseja pegar o valor: ");
+					int posicao = Integer.parseInt(scanner.nextLine());
+					System.out.println(listaDuplamenteEncadeada.getElemento(posicao));
+					break;
+
+				}case("6"):{
+					listaDuplamenteEncadeada.showLista();
+					break;
 				}
-				break;
 
-			}
-			case ("2"):{
-				continuar = true;
-				while(continuar) {
-					System.out.print("Digite a Posição que você deseja remover: ");
-					int posicao =Integer.parseInt(scanner.nextLine());
-					listaDuplamenteEncadeada.remove(posicao);
-					System.out.println("Deseja Remover mais um elemento?[S] or [N]");
-					String resposta = scanner.nextLine();
-					if(resposta.equalsIgnoreCase("n")) {
-						continuar = false;
-					} 
+				case("7"):{
+					System.out.println("Encerrando Programa");
+					operando = false;
+					break;
 				}
-				break;
-			}
-
-			case("3"):{
-
-				System.out.print("Digite a Posição desejada: ");
-				int index = Integer.parseInt(scanner.nextLine());
-
-				System.out.print("Digite o Elemento desejado: ");
-				String elemento  = scanner.nextLine();
-				listaDuplamenteEncadeada.set(index, elemento);
-				break;
-
-			}case("4"):{
-				System.out.println("Tamanho da lista: " + listaDuplamenteEncadeada.size());
-				break;
-
-
-			} case("5"):{
-
-				System.out.print("Digite a Posição que deseja pegar o valor: ");
-				int posicao = Integer.parseInt(scanner.nextLine());
-				System.out.println(listaDuplamenteEncadeada.getElemento(posicao));
-				break;
-
-			}case("6"):{
-				listaDuplamenteEncadeada.showLista();
-				break;
-			}
-
-			case("7"):{
-				System.out.println("Encerrando Programa");
-				operando = false;
-				break;
-			}
-			default:{
-				System.out.println("Valor digitado não é aceito ");
-				break;
-			}
+				default:{
+					System.out.println("Valor digitado não é aceito ");
+					break;
+				}
+				}
+			}catch(NumberFormatException e) {
+				System.out.println("Valor digitado não é aceito pelo programa " + e.getMessage());
+				continue;
 			}
 		}
 	}
