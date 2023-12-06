@@ -13,7 +13,7 @@ public class ListaDuplamenteEncadeada {
 		else {
 			temp = primeiroNo;
 			for (int i = 0; i < index; i++) {
-				temp = temp.getProximoNo();
+				temp = temp.getProx();
 			}
 		}
 
@@ -35,22 +35,22 @@ public class ListaDuplamenteEncadeada {
 				ultimoNo = primeiroNo;
 			}
 			else {
-				novoNo.setProximoNo(primeiroNo);
-				primeiroNo.setAnteriorNo(novoNo);
+				novoNo.setProx(primeiroNo);
+				primeiroNo.setAnte(novoNo);
 				primeiroNo = novoNo;
 			}
 		} else if (index == tamanho) {
-			ultimoNo.setProximoNo(novoNo);
-			novoNo.setAnteriorNo(ultimoNo);
+			ultimoNo.setProx(novoNo);
+			novoNo.setAnte(ultimoNo);
 			ultimoNo = novoNo;
 
 		} else {
 			temp = getNoAnterior(index);
 
-			temp.getAnteriorNo().setProximoNo(novoNo);
-			novoNo.setProximoNo(temp);
-			novoNo.setAnteriorNo(temp.getAnteriorNo());
-			temp.setAnteriorNo(novoNo);
+			temp.getAnte().setProx(novoNo);
+			novoNo.setProx(temp);
+			novoNo.setAnte(temp.getAnte());
+			temp.setAnte(novoNo);
 			System.out.println("4");
 		}
 
@@ -66,18 +66,18 @@ public class ListaDuplamenteEncadeada {
 			temp = getNoAnterior(index);
 
 			if (index == 0) {
-				primeiroNo = temp.getProximoNo();
+				primeiroNo = temp.getProx();
 				if (primeiroNo == null) {
 					ultimoNo = null;
 				} else {
-					primeiroNo.setAnteriorNo(null);
+					primeiroNo.setAnte(null);
 				}
 			} else if (index == tamanho - 1) {
-				ultimoNo = temp.getAnteriorNo();
-				ultimoNo.setProximoNo(null);
+				ultimoNo = temp.getAnte();
+				ultimoNo.setProx(null);
 			} else {
-				temp.getAnteriorNo().setProximoNo(temp.getProximoNo());
-				temp.getProximoNo().setAnteriorNo(temp.getAnteriorNo());
+				temp.getAnte().setProx(temp.getProx());
+				temp.getProx().setAnte(temp.getAnte());
 			}
 
 			tamanho--;
@@ -113,7 +113,7 @@ public class ListaDuplamenteEncadeada {
 		temp = primeiroNo;
 		for (int i = 0; i < tamanho;i++) {
 			System.out.println(temp.getDados());
-			temp = temp.getProximoNo();
+			temp = temp.getProx();
 		}
 
 	}

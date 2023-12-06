@@ -11,7 +11,7 @@ public class PilhaEncadeada {
 		if(tamanho ==  0) {
 			top = novoNo;
 		}else {
-			novoNo.setProximoNo(top);
+			novoNo.setProx(top);
 			top = novoNo;
 		}
 		tamanho++;
@@ -26,7 +26,7 @@ public class PilhaEncadeada {
 			return "Não existem mais elementos";
 		}else{
 			String temp = top.getDados();
-			top = top.getProximoNo();
+			top = top.getProx();
 			tamanho --;
 			return temp;
 		}
@@ -49,7 +49,7 @@ public class PilhaEncadeada {
 		temp = top;
 		for (int i = 0; i < tamanho;i++) {
 			System.out.println(temp.getDados());
-			temp = top.getProximoNo();
+			temp = top.getProx();
 			top = temp;
 		}
 	}

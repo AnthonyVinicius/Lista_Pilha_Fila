@@ -14,7 +14,7 @@ public class FilaEncadeada {
 			primeiro = novoNo;
 			ultimo = primeiro;
 		}else {
-			ultimo.setProximoNo(novoNo);
+			ultimo.setProx(novoNo);
 			ultimo = novoNo;
 		}
 		tamanho++;
@@ -25,7 +25,7 @@ public class FilaEncadeada {
 			return "Não existem mais elementos";
 		}else {
 			String tempDado = primeiro.getDados();
-			primeiro = primeiro.getProximoNo();
+			primeiro = primeiro.getProx();
 			tamanho --;
 			return tempDado; 
 		}
@@ -53,7 +53,7 @@ public class FilaEncadeada {
 		NoEncadeado tempShowFila = primeiro;
 		for (int i = 0 ; i < tamanho ; i++) {
 			System.out.println(tempShowFila.getDados());
-			tempShowFila = tempShowFila.getProximoNo();
+			tempShowFila = tempShowFila.getProx();
 
 		}
 	}
