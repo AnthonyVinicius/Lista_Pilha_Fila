@@ -84,6 +84,7 @@ public class AppFila {
 
 		}
 
+		scanner.close();
 	}
 }
 

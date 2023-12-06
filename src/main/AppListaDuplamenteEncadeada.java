@@ -103,5 +103,6 @@ public class AppListaDuplamenteEncadeada {
 				continue;
 			}
 		}
+		scanner.close();
 	}
 }

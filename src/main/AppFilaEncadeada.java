@@ -84,5 +84,6 @@ public class AppFilaEncadeada {
 			}
 
 		}
+		scanner.close();
 	}
 }
