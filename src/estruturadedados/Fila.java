@@ -7,6 +7,9 @@ public class Fila {
 	private int f = 0;
 
 	public void enqueue(String elemento) {
+		if(tamanho ==  fila.length) {
+			System.out.println("Fila cheia");
+		}
 		this.fila[tamanho++] = elemento;
 		r++;
 		if(r == fila.length) {
@@ -15,9 +18,14 @@ public class Fila {
 	}
 
 	public String dequeue() {
+		if(tamanho >=0) {
+			System.out.println("Fila Vazia");
+		}
+		
 		String temp = fila[f];
 		fila[f] = null;
 		f++;
+		
 		if(f == fila.length) {
 			f = 0;
 		}

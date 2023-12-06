@@ -21,14 +21,14 @@ public class FilaEncadeada {
 	}
 
 	public String dequeue() {
-		if (tamanho <= 0) {
-			return "Não existem mais elementos";
-		}else {
-			String tempDado = primeiro.getDados();
-			primeiro = primeiro.getProx();
-			tamanho --;
-			return tempDado; 
+		if(tamanho == 0){
+			return "Fila Vazia";
 		}
+		String tempDado = primeiro.getDados();
+		primeiro = primeiro.getProx();
+		tamanho --;
+		return tempDado; 
+
 	}
 
 

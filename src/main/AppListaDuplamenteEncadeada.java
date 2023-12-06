@@ -98,8 +98,8 @@ public class AppListaDuplamenteEncadeada {
 					break;
 				}
 				}
-			}catch(NumberFormatException e) {
-				System.out.println("Valor digitado não é aceito pelo programa " + e.getMessage());
+			}catch(RuntimeException e) {
+				System.out.println("Erro, ação invalida " + e.getMessage());
 				continue;
 			}
 		}

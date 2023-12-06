@@ -6,7 +6,7 @@ public class ListaDuplamenteEncadeada {
 	NoEncadeado primeiroNo;
 	NoEncadeado ultimoNo;
 
-	private NoEncadeado getNoAnterior(int index) {
+	private NoEncadeado getAtual(int index) {
 		if (index < 0 || index >= tamanho) {
 
 		}
@@ -31,7 +31,7 @@ public class ListaDuplamenteEncadeada {
 
 		if (index == 0) {
 			if(tamanho == 0){
-				primeiroNo = novoNo;
+				primeiroNo = novoNo;	
 				ultimoNo = primeiroNo;
 			}
 			else {
@@ -39,19 +39,19 @@ public class ListaDuplamenteEncadeada {
 				primeiroNo.setAnte(novoNo);
 				primeiroNo = novoNo;
 			}
-		} else if (index == tamanho) {
+
+		} else if (index == tamanho) { 
 			ultimoNo.setProx(novoNo);
 			novoNo.setAnte(ultimoNo);
 			ultimoNo = novoNo;
 
 		} else {
-			temp = getNoAnterior(index);
+			temp = getAtual(index);
 
 			temp.getAnte().setProx(novoNo);
 			novoNo.setProx(temp);
 			novoNo.setAnte(temp.getAnte());
 			temp.setAnte(novoNo);
-			System.out.println("4");
 		}
 
 		tamanho++;
@@ -63,7 +63,7 @@ public class ListaDuplamenteEncadeada {
 		if (index < 0 || index >= tamanho) {
 			System.out.println("Índice inválido (Remove)");
 		} else {
-			temp = getNoAnterior(index);
+			temp = getAtual(index);
 
 			if (index == 0) {
 				primeiroNo = temp.getProx();
@@ -91,9 +91,10 @@ public class ListaDuplamenteEncadeada {
 			System.out.println("Índice inválido getElemento");
 		}
 
-		temp = getNoAnterior(index);
+		temp = getAtual(index);
 
 		return temp.getDados();
+
 	}
 
 	public void set(int index, String entrada) {
@@ -102,7 +103,7 @@ public class ListaDuplamenteEncadeada {
 			System.out.println("Indice invalido");
 		}
 
-		getNoAnterior(index).setDados(entrada);
+		getAtual(index).setDados(entrada);
 	}
 
 	public int size() {

@@ -5,12 +5,15 @@ public class Pilha {
 	private String[] vetor = new String[5];
 
 	public void push(String elemento) {
+		if (tamanho == vetor.length) {
+			System.out.println("Pilha Cheia");
+		}
 		this.vetor[tamanho++] = elemento;
 	}
 
 	public String top() {
 		if(vetor[0] == null) {
-			return "Lista Vazia";
+			return "Pilha Vazia";
 		}else {
 			return vetor[tamanho-1];
 		}
