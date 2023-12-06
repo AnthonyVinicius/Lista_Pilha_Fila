@@ -10,7 +10,7 @@ public class Fila {
 		if(tamanho ==  fila.length) {
 			System.out.println("Fila cheia");
 		}
-		
+
 		fila[r] = elemento;
 		r++;
 		if(r == fila.length) {
@@ -19,14 +19,14 @@ public class Fila {
 	}
 
 	public String dequeue() {
-		if(tamanho >=0) {
+		if(tamanho <= 0) {
 			System.out.println("Fila Vazia");
 		}
-		
+
 		String temp = fila[f];
 		fila[f] = null;
 		f++;
-		
+
 		if(f == fila.length) {
 			f = 0;
 		}

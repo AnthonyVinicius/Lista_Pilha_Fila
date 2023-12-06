@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Lista {
 	int tamanho = 0;
 	Scanner input = new Scanner(System.in);
-	String[] lista = new String[6];
+	String[] lista = new String[3];
 
 	public void add(int posicao, String valor){
 		if( posicao < 0 || posicao >= lista.length  ) {
@@ -62,9 +62,4 @@ public class Lista {
 
 }
 
-//Implementações pendentes:
-//Add() item em uma posição invalida.
-//Remove() item inexistente.
-//Get() item inexistente
-//add() valor invalido para lista
 

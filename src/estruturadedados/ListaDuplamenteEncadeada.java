@@ -69,6 +69,7 @@ public class ListaDuplamenteEncadeada {
 				primeiroNo = temp.getProx();
 				if (primeiroNo == null) {
 					ultimoNo = null;
+					
 				} else {
 					primeiroNo.setAnte(null);
 				}
