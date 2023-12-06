@@ -1,7 +1,7 @@
 package estruturadedados;
 
 public class Fila {
-	private String[] fila = new String[5];
+	private String[] fila = new String[2];
 	private int tamanho;
 	private int r = 0;
 	private int f = 0;
@@ -10,7 +10,8 @@ public class Fila {
 		if(tamanho ==  fila.length) {
 			System.out.println("Fila cheia");
 		}
-		this.fila[tamanho++] = elemento;
+		
+		fila[r] = elemento;
 		r++;
 		if(r == fila.length) {
 			r = 0;
