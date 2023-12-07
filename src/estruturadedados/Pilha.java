@@ -38,16 +38,14 @@ public class Pilha {
 	}
 
 	public String pop(){
-		if (tamanho <= 0) {
+		if (tamanho == 0) {
 			return "Não existem mais elementos";
 		}else{
 			String temp = vetor[tamanho-1]; 
-			vetor[tamanho-1] = null;
-			tamanho--;
+			vetor[--tamanho] = null;
 			return temp;
 		}
 	}
-
 
 	public int size() {
 		return tamanho;

@@ -19,7 +19,7 @@ public class Fila {
 	}
 
 	public String dequeue() {
-		if(tamanho <= 0) {
+		if(tamanho == 0) {
 			System.out.println("Fila Vazia");
 		}
 
@@ -29,11 +29,8 @@ public class Fila {
 
 		if(f == fila.length) {
 			f = 0;
-		}
-		if (tamanho <= 0) {
-			tamanho = 0;
+			
 		}else {
-
 			tamanho--;
 		}
 		return temp;

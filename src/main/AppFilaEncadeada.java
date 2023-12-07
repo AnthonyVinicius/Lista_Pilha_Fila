@@ -86,6 +86,7 @@ public class AppFilaEncadeada {
 
 			}catch(RuntimeException e) {
 				System.out.println("Erro, ação invalida " + e.getMessage());
+				continue;
 			}
 		}
 		scanner.close();

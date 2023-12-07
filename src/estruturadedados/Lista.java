@@ -25,6 +25,10 @@ public class Lista {
 	}
 
 	public void remove(int posicao) {
+		if( posicao < 0 || posicao >= lista.length  ) {
+			System.out.println("A Posição " + posicao + 1 +" é invalida");
+			return;
+		}
 		System.out.println("Removendo " + lista[posicao] +" presente na posicao " + (posicao + 1));
 		lista[posicao] = null; 	
 		for(int i = posicao; i < lista.length - 1; i++){
@@ -52,7 +56,7 @@ public class Lista {
 			System.out.println("Lista Completa:");
 			for(int i = 0; i< lista.length;i++) {
 				if (lista[i] != null) {
-//					System.out.println(lista[i]+" index " + i );
+					//					System.out.println(lista[i]+" index " + i );
 					System.out.println(lista[i]+" posição " + (i + 1));
 				}
 			}

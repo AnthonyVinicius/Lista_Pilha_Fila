@@ -84,6 +84,7 @@ public class AppPilha {
 				}
 			}catch(RuntimeException e) {
 				System.out.println("Erro, ação invalida" + e.getMessage());
+				continue;
 			}
 
 		}
