@@ -11,6 +11,15 @@ public class Pilha {
 		this.vetor[tamanho++] = elemento;
 	}
 
+	public String pop(){
+		if (tamanho == 0) {
+			return "Não existem mais elementos";
+		}else{
+			String temp = vetor[tamanho-1]; 
+			vetor[--tamanho] = null;
+			return temp;
+		}
+	}
 	public String top() {
 		if(vetor[0] == null) {
 			return "Pilha Vazia";
@@ -37,15 +46,6 @@ public class Pilha {
 		}
 	}
 
-	public String pop(){
-		if (tamanho == 0) {
-			return "Não existem mais elementos";
-		}else{
-			String temp = vetor[tamanho-1]; 
-			vetor[--tamanho] = null;
-			return temp;
-		}
-	}
 
 	public int size() {
 		return tamanho;

@@ -22,7 +22,7 @@ public class PilhaEncadeada {
 	}
 
 	public String pop() {
-		if (tamanho <= 0) {
+		if (tamanho == 0) {
 			return "Não existem mais elementos";
 		}else{
 			String temp = top.getDados();
